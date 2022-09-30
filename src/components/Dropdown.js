@@ -5,7 +5,6 @@ const Dropdown =({options, selected, onMenuClick})=> {
     const ref =useRef()
     const [open, setOpen]=useState(false)
 
-
     useEffect(()=>{
         document.body.addEventListener('click', (event)=>{
             if(ref.current.contains(event.target)){
@@ -29,10 +28,12 @@ const Dropdown =({options, selected, onMenuClick})=> {
         )
     })
     return(
-        <div ref = {ref} className="ui form">
+        <div className="container">
+        <div  className="ui form">
             <div className="field">
                 <label className="label">Select a Color</label>
                 <div 
+                    ref = {ref}
                     onClick={()=>setOpen(!open)}
                     className={`ui selection dropdown ${open ? 'visible active': ''} `}
                     >
@@ -41,6 +42,10 @@ const Dropdown =({options, selected, onMenuClick})=> {
                     <div className={`menu ${open ? 'visible transition': ''} `}>{dropdownList}</div>
                 </div>
             </div>
+        </div>
+        <br />
+        <br />
+        <div style={{backgroundColor: selected.value, padding: '50px', textAlign: 'center', borderRadius: '10px'}}>{selected.label}</div>
         </div>
     )
 
