@@ -3,28 +3,26 @@ import Dropdown from "./components/Dropdown";
 
 const options = [
   {
-   label: 'The color blue',
-   value: 'blue' 
-  }, 
+    label: 'this is color Blue',
+    value: 'blue'
+  },
   {
-   label: 'The color red',
-   value: 'red' 
-  }, 
+    label: 'this is color Yellow',
+    value: 'yellow'
+  },
   {
-   label: 'The color green',
-   value: 'green' 
-  }, 
-  
+    label: 'this is color Red',
+    value: 'red'
+  }
 ]
-function App() {
-  
-const [selected, setSelected] =useState(options[0])
-  return (
-    <Dropdown  
-      selected = {selected}
-      onInputClick= {setSelected} 
-      options= {options} />
-  );
-}
+const App =()=>{
 
+  const [selected, setSelected] = useState(options[0])
+
+  return (
+    <div>
+      <Dropdown selected ={selected} onMenuClick={setSelected} options={options}/>
+    </div>
+  )
+}
 export default App;
