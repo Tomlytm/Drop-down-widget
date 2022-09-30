@@ -22,7 +22,20 @@ const App =()=>{
 
   return (
     <div>
-      <Dropdown selected ={selected} onMenuClick={setSelected} options={options}/>
+      <button  
+        onClick={()=> setShowDropdown(!showDropdown)}
+        >
+          Toggle Dropdown
+        </button>
+      <br />
+      <br />
+      <br />
+      {showDropdown ?
+      <Dropdown 
+        selected ={selected} 
+        onMenuClick={setSelected} 
+        options={options}
+        /> : null}
     </div>
   )
 }
